@@ -1,0 +1,17 @@
+{
+  "name": "peopleserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^4.13.0",
+    "mercurius": "^12.2.0"
+  }
+}
