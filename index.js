@@ -41,6 +41,10 @@ const resolvers = {
 };
 
 // Declare a route
+fastify.get('/', (req, reply) => {
+  reply.send({ "hello": "World!" });
+});
+
 fastify.get('/books', (req, reply) => {
   reply.send(getBooks());
 });
