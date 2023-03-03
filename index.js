@@ -2,6 +2,7 @@
 import Fastify from 'fastify';
 import mercurius from 'mercurius';
 
+const port = process.env.PORT || 3000;
 const fastify = Fastify({ logger: true });
 
 function getBooks() {
@@ -52,7 +53,7 @@ fastify.register(mercurius, {
 // Run the server!
 const start = async () => {
   try {
-    await fastify.listen({ port: 3000 })
+    await fastify.listen({ port })
   } catch (err) {
     fastify.log.error(err)
     process.exit(1)
