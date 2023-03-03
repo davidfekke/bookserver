@@ -10,6 +10,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": "18.14.2"
+  },
   "dependencies": {
     "fastify": "^4.13.0",
     "mercurius": "^12.2.0"
