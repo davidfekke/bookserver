@@ -32,6 +32,14 @@ const typeDef = `
   }
 `;
 
+const resolvers = {
+  Query: {
+    books: async () => {
+      return getBooks()
+    }
+  }
+};
+
 // Declare a route
 fastify.get('/', (req, reply) => {
   reply.send({ "hello": "World!" });
