@@ -1,6 +1,5 @@
 // Require the framework and instantiate it
 import Fastify from 'fastify';
-import mercurius from 'mercurius';
 
 const port = process.env.PORT || 3000;
 const fastify = Fastify({ logger: true });
