@@ -1,6 +1,5 @@
 // Require the framework and instantiate it
 import Fastify from 'fastify';
-import mercurius from 'mercurius';
 
 const port = process.env.PORT || 3000;
 const fastify = Fastify({ logger: true });
@@ -20,26 +19,6 @@ function getBooks() {
   ];
 }
 
-const typeDef = `
-  type Book {
-    id: ID!
-    title: String!
-    author: String!
-  }
-
-  type Query {
-    books: [Book!]!
-  }
-`;
-
-const resolvers = {
-  Query: {
-    books: async () => {
-      return getBooks()
-    }
-  }
-};
-
 // Declare a route
 fastify.get('/', (req, reply) => {
   reply.send({ "hello": "World!" });
@@ -47,12 +26,6 @@ fastify.get('/', (req, reply) => {
 
 fastify.get('/books', (req, reply) => {
   reply.send(getBooks());
-});
-
-fastify.register(mercurius, {
-  schema: typeDef,
-  resolvers: resolvers,
-  graphiql: true
 });
 
 // Run the server!
