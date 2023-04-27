@@ -20,6 +20,18 @@ function getBooks() {
   ];
 }
 
+const typeDef = `
+  type Book {
+    id: ID!
+    title: String!
+    author: String!
+  }
+
+  type Query {
+    books: [Book!]!
+  }
+`;
+
 // Declare a route
 fastify.get('/', (req, reply) => {
   reply.send({ "hello": "World!" });
