@@ -51,7 +51,8 @@ fastify.get('/books', (req, reply) => {
 
 fastify.register(mercurius, {
   schema: typeDef,
-  resolvers: resolvers
+  resolvers: resolvers,
+  graphiql: true
 });
 
 // Run the server!
